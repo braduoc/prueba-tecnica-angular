@@ -1,0 +1,11 @@
+<h1 class="text-center">Detalle Producto</h1>
+
+
+<div class="card text-white bg-dark mb-3 container" style="width: 80%;">
+    <h2 class="card-header">{{product?.name}}</h2>
+    <div class="card-body">
+      <h3 [ngStyle]="{color: product?.offert? 'red':'green'}" class="card-title">{{product?.price | currency}}</h3>
+      <p class="card-text">{{product?.description}}</p>
+        
+    </div>
+  </div>

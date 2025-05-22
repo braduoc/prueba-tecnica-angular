@@ -1,0 +1,29 @@
+<div [ngStyle]="{display: 'flex', justifyContent: 'center', alignItems: 'center'}">
+    <label [ngStyle]="{marginRight: '10px'}" for="search">Buscar producto </label>
+    <input [ngStyle]="{width: '80%'}" type="text" id="search" placeholder="Buscar producto"
+        (input)="searchProduct($event)">
+</div>
+<br>
+<div class="container">
+    
+<table class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>id</th>
+            <th>nombre</th>
+            <th>descripcion</th>
+            <th>precio</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of listProducts">
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.description }}</td>
+            <td  [ngStyle]="{color: item?.offert? 'red':'green'}">{{ item.price | currency}}</td>
+            <td><button class="btn btn-dark" [routerLink]="['/details', item.id]">Detalles</button></td>
+        </tr>
+    </tbody>
+</table>
+</div>
